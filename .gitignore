@@ -1,0 +1,10 @@
+# Claves privadas
+secretos.py
+wokwi/secretos.py
+
+# Base de datos generada al correr historico.py
+*.db
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="900" height="540" fill="#ffffff"/>
+
+  <!-- ESP32 -->
+  <rect x="20" y="110" width="250" height="310" rx="8" fill="#eef4ff" stroke="#3b6fd4" stroke-width="2"/>
+  <text x="145" y="135" text-anchor="middle" font-weight="bold" fill="#1d3f87">ESP32 en Wokwi (MicroPython)</text>
+  <rect x="40" y="155" width="210" height="50" rx="6" fill="#fff" stroke="#3b6fd4"/>
+  <text x="145" y="176" text-anchor="middle" fill="#111">Sensores</text>
+  <text x="145" y="194" text-anchor="middle" fill="#111">PIR + HC-SR04</text>
+  <rect x="40" y="235" width="210" height="80" rx="6" fill="#fff" stroke="#3b6fd4"/>
+  <text x="145" y="258" text-anchor="middle" fill="#111">main.py</text>
+  <text x="145" y="277" text-anchor="middle" fill="#111">Timer + interrupción del PIR</text>
+  <text x="145" y="296" text-anchor="middle" fill="#111">comunicacion, nube, talkback</text>
+  <rect x="40" y="345" width="210" height="50" rx="6" fill="#fff" stroke="#3b6fd4"/>
+  <text x="145" y="366" text-anchor="middle" fill="#111">Actuadores</text>
+  <text x="145" y="384" text-anchor="middle" fill="#111">LED + buzzer</text>
+  <line x1="145" y1="205" x2="145" y2="235" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <line x1="145" y1="315" x2="145" y2="345" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <!-- MQTTX -->
+  <rect x="360" y="20" width="190" height="55" rx="8" fill="#f4f4f4" stroke="#777" stroke-width="1.5"/>
+  <text x="455" y="43" text-anchor="middle" fill="#111">MQTTX</text>
+  <text x="455" y="61" text-anchor="middle" fill="#111">comandos de prueba</text>
+
+  <!-- Broker -->
+  <rect x="360" y="115" width="190" height="85" rx="8" fill="#fff4e5" stroke="#d98a1c" stroke-width="2"/>
+  <text x="455" y="145" text-anchor="middle" font-weight="bold" fill="#7a4a05">Broker MQTT</text>
+  <text x="455" y="165" text-anchor="middle" fill="#111">broker.emqx.io:1883</text>
+  <text x="455" y="183" text-anchor="middle" fill="#111">/lecturas /eventos /comandos</text>
+
+  <line x1="455" y1="75" x2="455" y2="115" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="465" y="99" fill="#333">comandos</text>
+  <line x1="270" y1="170" x2="360" y2="160" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <line x1="360" y1="185" x2="270" y2="195" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="283" y="153" fill="#333" font-size="11">lecturas</text>
+  <text x="283" y="213" fill="#333" font-size="11">comandos</text>
+
+  <!-- PC -->
+  <rect x="330" y="260" width="250" height="185" rx="8" fill="#effaf0" stroke="#2e8b3d" stroke-width="2"/>
+  <text x="345" y="282" font-weight="bold" fill="#1d5c27">PC (Python)</text>
+  <rect x="350" y="295" width="210" height="36" rx="6" fill="#fff" stroke="#2e8b3d"/>
+  <text x="455" y="318" text-anchor="middle" fill="#111">historico.py (paho-mqtt)</text>
+  <rect x="350" y="345" width="210" height="36" rx="6" fill="#fff" stroke="#2e8b3d"/>
+  <text x="455" y="368" text-anchor="middle" fill="#111">seguridad.db (SQLite)</text>
+  <rect x="350" y="395" width="210" height="36" rx="6" fill="#fff" stroke="#2e8b3d"/>
+  <text x="455" y="418" text-anchor="middle" fill="#111">consultas.py (histórico)</text>
+  <line x1="455" y1="200" x2="455" y2="295" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="465" y="245" fill="#333">suscripción</text>
+  <line x1="455" y1="331" x2="455" y2="345" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <line x1="455" y1="381" x2="455" y2="395" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <!-- ThingSpeak -->
+  <rect x="660" y="110" width="220" height="310" rx="8" fill="#f6efff" stroke="#7b46c4" stroke-width="2"/>
+  <text x="770" y="135" text-anchor="middle" font-weight="bold" fill="#47227f">ThingSpeak (nube)</text>
+  <rect x="680" y="155" width="180" height="60" rx="6" fill="#fff" stroke="#7b46c4"/>
+  <text x="770" y="180" text-anchor="middle" fill="#111">Canal 3561428</text>
+  <text x="770" y="198" text-anchor="middle" fill="#111">4 campos</text>
+  <rect x="680" y="235" width="180" height="70" rx="6" fill="#fff" stroke="#7b46c4"/>
+  <text x="770" y="260" text-anchor="middle" fill="#111">Dashboard</text>
+  <text x="770" y="278" text-anchor="middle" fill="#111">lámpara, medidor,</text>
+  <text x="770" y="294" text-anchor="middle" fill="#111">número y gráficas</text>
+  <rect x="680" y="325" width="180" height="70" rx="6" fill="#fff" stroke="#7b46c4"/>
+  <text x="770" y="350" text-anchor="middle" fill="#111">TalkBack 58230</text>
+  <text x="770" y="368" text-anchor="middle" fill="#111">cola de comandos</text>
+  <text x="770" y="384" text-anchor="middle" fill="#111">ARMAR / DESARMAR</text>
+  <line x1="770" y1="215" x2="770" y2="235" stroke="#333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <!-- HTTP ESP32 <-> ThingSpeak -->
+  <path d="M145,420 L145,490 L770,490 L770,420" fill="none" stroke="#333" stroke-width="1.5" marker-start="url(#flecha)" marker-end="url(#flecha)"/>
+  <text x="457" y="480" text-anchor="middle" fill="#333">HTTP cada 20 s: envía lecturas (nube.py) y consulta comandos (talkback.py)</text>
+</svg>

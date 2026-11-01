@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "Yoma",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": -4.76,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -82.4,
+      "left": -112.98,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -104.1,
+      "left": 130.3,
+      "attrs": { "distance": "138" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -51.6, "left": -169, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 61.55,
+      "left": -134.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -93.6,
+      "left": -238.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pir1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pir1:OUT", "esp:14", "yellow", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:18", "purple", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "esp:5", "blue", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.3", "black", [ "v0" ] ],
+    [ "bz1:1", "esp:26", "orange", [ "v0" ] ],
+    [ "bz1:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:27", "r1:2", "green", [ "h0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v76.8", "h-28.8" ] ]
+  ],
+  "dependencies": {}
+}
