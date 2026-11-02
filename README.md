@@ -127,8 +127,10 @@ Para probar comandos por MQTT, publicar en `utp/fisc/ds8/seguridad_g8/comandos` 
 
 - El ESP32 conecta al Wi-Fi, sincroniza la hora y se conecta al broker.
 - Con Simulate motion en el PIR se activa la alarma y se publican ALARMA_ACTIVADA y, después, ALARMA_DESACTIVADA.
+- Con un objeto a menos de 50 cm y sin movimiento, la alarma también se activa (por distancia).
 - DESARMAR y ARMAR con el token correcto cambian el estado.
-- Un token falso o un comando desconocido se rechaza y se registra.
+- Un token falso, un comando desconocido o un mensaje que no es JSON válido se rechaza y se registra.
+- Si el NTP falla al arrancar, el sistema sigue funcionando y marca la hora como no sincronizada.
 - La base de datos guardó 44 lecturas y 8 eventos en la prueba inicial, y `consultas.py` los recupera.
 - ThingSpeak recibe las lecturas y el dashboard se actualiza.
 - Los comandos ARMAR y DESARMAR puestos en el TalkBack se ejecutan y salen de la cola.
@@ -151,6 +153,14 @@ El más largo de resolver fue un error `-1` que se repetía en la consola. La ca
 | ![](capturas/07-graficas-thingspeak.png) | Gráficas en ThingSpeak |
 | ![](capturas/08-dashboard-alarma.png) | Dashboard con la alarma encendida |
 | ![](capturas/09-consola-talkback.png) | Comando de TalkBack ejecutado en la consola |
+| ![](capturas/10-alarma-distancia.png) | Alarma activada solo por distancia (objeto a 7 cm, sin movimiento) |
+| ![](capturas/11-consola-rechazo.png) | Consola: mensaje que no es JSON válido, rechazado y auditado |
+| ![](capturas/12-mqttx-comandos-y-rechazos.png) | MQTTX: comandos ejecutados y tres tipos de rechazo (token, comando desconocido, JSON corrupto) |
+| ![](capturas/13-consultas-salida.png) | Salida de `consultas.py`: alarmas, comandos rechazados y resumen por tipo |
+| ![](capturas/14-schema-tablas.png) | Tablas e índices de la base de datos (`schema.sql`) |
+| ![](capturas/15-thingspeak-config-canal.png) | Configuración del canal de ThingSpeak: nombre y cuatro campos |
+| ![](capturas/16-thingspeak-widget-alarma.png) | Widget de la lámpara de alarma: se enciende si el campo 3 es igual a 1 |
+| ![](capturas/17-ntp-falla.png) | Falla del NTP (ETIMEDOUT): el sistema sigue funcionando sin hora |
 
 ## Integrantes y parte que explica
 
