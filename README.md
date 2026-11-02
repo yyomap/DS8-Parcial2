@@ -73,12 +73,12 @@ El timestamp es Unix en UTC. El ESP32 cuenta los segundos desde el año 2000, as
 
 ## Base de datos
 
-SQLite, con dos tablas definidas en `pc/schema.sql`:
+SQLite, con dos tablas definidas en `base-de-datos/schema.sql`:
 
 - `lecturas`: una fila por lectura de sensores
 - `eventos`: alarmas y comandos ejecutados o rechazados, con su tipo y detalle
 
-`pc/consultas.py` tiene las consultas para recuperar el histórico: lecturas por rango de tiempo, eventos por tipo, conteo de alarmas y un resumen de eventos por tipo.
+`base-de-datos/consultas.py` tiene las consultas para recuperar el histórico: lecturas por rango de tiempo, eventos por tipo, conteo de alarmas y un resumen de eventos por tipo.
 
 ## Nube: ThingSpeak
 
