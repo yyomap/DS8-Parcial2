@@ -23,24 +23,27 @@ def lecturas_por_rango(bd, desde, hasta):
 
 
 def eventos_por_tipo(bd, tipo):
-    """Todos los eventos de un tipo, del más viejo al más nuevo."""
+    """Eventos de un tipo con hora sincronizada, del más viejo al más nuevo."""
     return bd.execute(
-        "SELECT timestamp, detalle FROM eventos WHERE tipo = ? ORDER BY timestamp",
+        "SELECT timestamp, detalle FROM eventos "
+        "WHERE tipo = ? AND hora_sincronizada = 1 ORDER BY timestamp",
         (tipo,),
     ).fetchall()
 
 
 def contar_alarmas(bd):
-    """Cuántas veces se activó la alarma."""
+    """Cuántas veces se activó la alarma (solo eventos con hora sincronizada)."""
     return bd.execute(
-        "SELECT COUNT(*) FROM eventos WHERE tipo = 'ALARMA_ACTIVADA'"
+        "SELECT COUNT(*) FROM eventos "
+        "WHERE tipo = 'ALARMA_ACTIVADA' AND hora_sincronizada = 1"
     ).fetchone()[0]
 
 
 def resumen_eventos(bd):
-    """Cantidad de eventos por tipo."""
+    """Cantidad de eventos por tipo (solo con hora sincronizada)."""
     return bd.execute(
-        "SELECT tipo, COUNT(*) FROM eventos GROUP BY tipo ORDER BY COUNT(*) DESC"
+        "SELECT tipo, COUNT(*) FROM eventos WHERE hora_sincronizada = 1 "
+        "GROUP BY tipo ORDER BY COUNT(*) DESC"
     ).fetchall()
 
 
