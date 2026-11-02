@@ -108,7 +108,7 @@ Dispositivo (Wokwi):
 PC:
 
 1. `pip install -r requirements.txt` (en Windows puede ser `py -m pip install -r requirements.txt`).
-2. Dentro de la carpeta `pc`, correr `python historico.py` y dejarlo abierto mientras corre la simulación.
+2. Dentro de la carpeta `base-de-datos`, correr `python historico.py` y dejarlo abierto mientras corre la simulación.
 3. Con la simulación andando un rato, correr `python consultas.py` para ver el histórico.
 
 Para probar comandos por MQTT, publicar en `utp/fisc/ds8/seguridad_g8/comandos` un mensaje como este (el token real está en `secretos.py`, que no se sube al repositorio):
