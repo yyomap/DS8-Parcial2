@@ -48,7 +48,7 @@ El sistema se puede armar y desarmar de dos maneras: por MQTT, con un mensaje JS
 │   ├── talkback.py
 │   ├── diagram.json
 │   └── secretos_ejemplo.py
-└── pc/
+└── base-de-datos/
     ├── historico.py         escucha MQTT y guarda en SQLite
     ├── consultas.py         consultas del histórico
     ├── consultas.sql        las mismas consultas en SQL
